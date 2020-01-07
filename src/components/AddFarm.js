@@ -14,7 +14,8 @@ class AddFarm extends Component {
                 Taluka:'',
                 Pincode:'',
                 Area:'',
-                Location:'N/A'
+                Location:'N/A',
+                FarmNum:props.location.MyFarmprops.farmNum+1
             }
     }
 
@@ -36,74 +37,74 @@ class AddFarm extends Component {
         return (
             <div>
                 <form  onSubmit={this.submitHandler} >
-                <div class="form-group">
-                <label class="col-md-4 control-label">Farm Name</label>  
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input  name="Name" value={Name} onChange={this.changeHandler} placeholder="Farm Name" class="form-control"  type="text"></input>
+                <div className="form-group">
+                <label className="col-md-4 control-label">Farm Name</label>  
+                <div className="col-md-4 inputGroupContainer">
+                <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                <input  name="Name" value={Name} onChange={this.changeHandler} placeholder="Farm Name" className="form-control"  type="text"></input>
                     </div>
                 </div>
                 </div>
 
-                <div class="form-group">
-                <label class="col-md-4 control-label">State</label>  
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input  name="State" value={State} onChange={this.changeHandler} placeholder="State" class="form-control"  type="text"></input>
+                <div className="form-group">
+                <label className="col-md-4 control-label">State</label>  
+                <div className="col-md-4 inputGroupContainer">
+                <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                <input  name="State" value={State} onChange={this.changeHandler} placeholder="State" className="form-control"  type="text"></input>
                     </div>
                 </div>
                 </div>
 
-                <div class="form-group">
-                <label class="col-md-4 control-label">District</label>  
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input  name="District" value={District} onChange={this.changeHandler} placeholder="District" class="form-control"  type="text"></input>
+                <div className="form-group">
+                <label className="col-md-4 control-label">District</label>  
+                <div className="col-md-4 inputGroupContainer">
+                <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                <input  name="District" value={District} onChange={this.changeHandler} placeholder="District" className="form-control"  type="text"></input>
                     </div>
                 </div>
                 </div>
 
-                <div class="form-group">
-                <label class="col-md-4 control-label">Taluka</label>  
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input  name="Taluka" value={Taluka} onChange={this.changeHandler} placeholder="Taluka" class="form-control"  type="text"></input>
+                <div className="form-group">
+                <label className="col-md-4 control-label">Taluka</label>  
+                <div className="col-md-4 inputGroupContainer">
+                <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                <input  name="Taluka" value={Taluka} onChange={this.changeHandler} placeholder="Taluka" className="form-control"  type="text"></input>
                     </div>
                 </div>
                 </div>
 
-                <div class="form-group">
-                <label class="col-md-4 control-label">Pin Code</label>  
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input  name="Pincode" value={Pincode} onChange={this.changeHandler} placeholder="Pin Code" class="form-control"  type="text"></input>
-                    </div>
-                </div>
-                </div>
-
-
-                <div class="form-group">
-                <label class="col-md-4 control-label">Area(in acres)</label>  
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input  name="Area" value={Area} onChange={this.changeHandler} placeholder="Area(in acres)" class="form-control"  type="text"></input>
+                <div className="form-group">
+                <label className="col-md-4 control-label">Pin Code</label>  
+                <div className="col-md-4 inputGroupContainer">
+                <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                <input  name="Pincode" value={Pincode} onChange={this.changeHandler} placeholder="Pin Code" className="form-control"  type="text"></input>
                     </div>
                 </div>
                 </div>
 
 
-                <div class="form-group">
-                <label class="col-md-4 control-label">Location</label>  
-                <div class="col-md-4 inputGroupContainer">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input  name="Location" value={Location} onChange={this.changeHandler} placeholder="Location" class="form-control"  type="text"></input>
+                <div className="form-group">
+                <label className="col-md-4 control-label">Area(in acres)</label>  
+                <div className="col-md-4 inputGroupContainer">
+                <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                <input  name="Area" value={Area} onChange={this.changeHandler} placeholder="Area(in acres)" className="form-control"  type="text"></input>
+                    </div>
+                </div>
+                </div>
+
+
+                <div className="form-group">
+                <label className="col-md-4 control-label">Location</label>  
+                <div className="col-md-4 inputGroupContainer">
+                <div className="input-group">
+                <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
+                <input  name="Location" value={Location} onChange={this.changeHandler} placeholder="Location" className="form-control"  type="text"></input>
                     </div>
                 </div>
                 </div>

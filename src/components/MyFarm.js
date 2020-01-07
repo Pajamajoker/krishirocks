@@ -17,7 +17,8 @@ class MyFarm extends Component {
 
     componentDidMount()
     {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.props.aadharid}})
+        //axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.props.aadharid}})
         .then(response => {  console.log(  "hello" ) 
         this.setState({posts:response.data}) 
         }
@@ -38,7 +39,7 @@ class MyFarm extends Component {
 
             <div> 
 
-            <div className="mt"> <Link to="/account/addfarm" className="btn bg-blue-ui white read">ADD NEW FARM</Link> <br/><br/></div>  
+            <div className="mt"> <Link to={{pathname:"/account/addfarm",MyFarmprops:{farmNum:posts.length}}} className="btn bg-blue-ui white read">ADD NEW FARM</Link> <br/><br/></div>  
                 
                     <div className="carousel-inner">
                         <div className="carousel-item active">

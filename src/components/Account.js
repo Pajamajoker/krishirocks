@@ -9,19 +9,47 @@ export default class Account extends Component {
     constructor(props) {
         super(props)
             this.state = {
-                aadharid:this.props.location.state.aadharid
+                //aadharid:this.props.location.state.aadharid
             }
+
     }
+
+    componentDidMount()
+    {
+       //console.log("just got mounted")
+        let routeState
+        if(this.props.location.state){
+            localStorage.setItem('routeState', JSON.stringify(this.props.location.state))
+            routeState = this.props.location.state
+           // console.log("in first if")
+        } 
+        else 
+        {
+           // console.log("in first else")
+            routeState = localStorage.getItem('routeState')
+            if(routeState){ routeState = JSON.parse(routeState) ;    }
+
+        }
+
+        if(routeState){
+           this.setState({aadharid:routeState.aadharid})//use routeState ahead
+          // console.log("in 3 if")
+        } else {
+            //Prompt no data.
+        }
+    }
+
     render(props) {
 
-        console.log(this.state.aadharid)
+        console.log("this is the aadharid"+this.state.aadharid)
         return (
             <div>
                 <Navbar/>
                 <Switch>
                     <Route exact path={`${this.props.match.path}`} component={Home}></Route>
                     <Route exact path={`${this.props.match.path}/home`} component={Home}></Route>
-                    <Route path={`${this.props.match.path}/myfarm`} component={MyFarm} ></Route>
+                    <Route path={`${this.props.match.path}/myfarm`} 
+                    render={(props) => (<MyFarm {...props} aadharid={this.state.aadharid} />)} ></Route>
                     <Route path={`${this.props.match.path}/addfarm`}
                     render={(props) => (<AddFarm {...props} aadharid={this.state.aadharid} />)}
                     ></Route> 
