@@ -24,7 +24,7 @@ export default class FarmTile extends Component {
                                         <div className="item-box-blog-text">
                                         <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
                                         </div>
-                                        <div className="mt"> <Link to="/account/home" className="btn bg-blue-ui white read">Show Farm Details</Link> </div>
+                                        <div className="mt"> <Link to="/account/FarmDetails" className="btn bg-blue-ui white read">Show Farm Details</Link> </div>
                                     </div>
                             </div>
                       </div>
