@@ -4,7 +4,7 @@ import Home from'./Home'
 import {Switch,Route} from 'react-router-dom'
 import MyFarm from './MyFarm'
 import AddFarm from './AddFarm'
-
+import Feed from './Feed'
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -48,6 +48,7 @@ export default class Account extends Component {
                 <Switch>
                     <Route exact path={`${this.props.match.path}`} component={Home}></Route>
                     <Route exact path={`${this.props.match.path}/home`} component={Home}></Route>
+                    <Route exact path={`${this.props.match.path}/feed`} component={Feed}></Route>
                     <Route path={`${this.props.match.path}/myfarm`} 
                     render={(props) => (<MyFarm {...props} aadharid={this.state.aadharid} />)} ></Route>
                     <Route path={`${this.props.match.path}/addfarm`}
