@@ -11,15 +11,53 @@ class MyFarm extends Component {
     
         this.state = {
              posts:[],
-             error:""
+             error:"",
+             aadharid:this.props.aadharid
+        }
+    }
+
+    loadLocalData=()=>
+    {
+        try{
+            const serializedState=localStorage.getItem("MyFarmState")
+            if(serializedState===null)
+                return undefined
+            return serializedState  
+        }
+        catch(e){
+            console.log(e)
+            return undefined
         }
     }
 
     componentDidMount()
     {
-        axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.props.aadharid}})
-        //axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.props.aadharid}})
-        .then(response => {  console.log(  "hello" ) 
+        console.log("here")
+        let Currstate
+        //try to load from local storage
+        Currstate=this.loadLocalData()
+        //save state to local storage
+        if(Currstate===undefined)
+        {
+            try{
+                const serializedState=JSON.stringify(this.state)
+                localStorage.setItem('MyFarmState',serializedState)
+                
+            }
+            catch(e)
+            {
+                console.log(e)
+            }
+        }
+        else
+        this.setState(JSON.parse(Currstate))
+        
+
+
+        console.log(this.state.aadharid+"febshbfhjesbfkj")
+       // axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.state.aadharid}})
+        axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
+        .then(response => {  console.log( response.data  ) 
         this.setState({posts:response.data}) 
         }
         ) 
@@ -32,14 +70,21 @@ class MyFarm extends Component {
 
 
     }
+     
+
+
 
     render() {
         const{posts}=this.state
+        console.log(JSON.stringify(this.state))
         return (
 
             <div> 
 
-            <div className="mt"> <Link to={{pathname:"/account/addfarm",MyFarmprops:{farmNum:posts.length}}} className="btn bg-blue-ui white read">ADD NEW FARM</Link> <br/><br/></div>  
+            <div className="mt">
+                <Link to={{pathname:"/account/addfarm",MyFarmprops:{farmNum:posts.length}}} className="btn bg-blue-ui white read">ADD NEW FARM</Link> 
+                 <br/><br/>
+                 </div>  
                 
                     <div className="carousel-inner">
                         <div className="carousel-item active">

@@ -31,6 +31,7 @@ class AddFarm extends Component {
 
 
     render() {
+               
         const {Name,State,District,Taluka,Pincode,Area,Location}=this.state
         console.log("inaddfarm")
         console.log(this.state.aadharid)
