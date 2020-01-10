@@ -6,6 +6,7 @@ import MyFarm from './MyFarm'
 import AddFarm from './AddFarm'
 import Feed from './Feed'
 import PostQuestion from './PostQuestion'
+//import QFtemp from './QFtemp'
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -49,7 +50,8 @@ export default class Account extends Component {
                 <Switch>
                     <Route exact path={`${this.props.match.path}`} component={Home}></Route>
                     <Route exact path={`${this.props.match.path}/home`} component={Home}></Route>
-                    <Route exact path={`${this.props.match.path}/feed`} component={Feed}></Route>
+                    <Route path={`${this.props.match.path}/feed`} 
+                    render={(props) => (<Feed {...props} aadharid={this.state.aadharid} />)} ></Route>
                     <Route path={`${this.props.match.path}/myfarm`} 
                     render={(props) => (<MyFarm {...props} aadharid={this.state.aadharid} />)} ></Route>
                     <Route path={`${this.props.match.path}/addfarm`}
@@ -58,6 +60,7 @@ export default class Account extends Component {
                     <Route path={`${this.props.match.path}/postquestion`}
                     render={(props) => (<PostQuestion {...props} aadharid={this.state.aadharid} />)}
                     ></Route>
+                   
                 </Switch>
             </div>
         )

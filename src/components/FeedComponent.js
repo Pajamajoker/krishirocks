@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import QuestionComponent from './resources/QuestionComponent'
+import { Popover ,Pane,Text ,SearchInput} from 'evergreen-ui'
+import { Button } from 'reactstrap'
+import ReactSearchBox from 'react-search-box'
+import SearchField from "react-search-field";
+
 
 
 // {
@@ -19,14 +25,15 @@ export default class extends Component {
 
     constructor(props) {
         super(props)
-    
+        
         this.state = ( {
              posts : []
         })
     }
     
      componentDidMount () {
-         axios.get('https://jsonplaceholder.typicode.com/posts')
+         //axios.get('https://jsonplaceholder.typicode.com/posts',{params:{aadharid:"123456789012"}})
+         axios.get('http://192.168.43.233:8080/forum/show/question',{params:{aadharid:"123456789012",type:"asd"}})
          .then(Response =>{
              console.log(Response)
              this.setState ({posts:Response.data})
@@ -36,10 +43,15 @@ export default class extends Component {
          })
      }
 
+     changeHandler = (event) => {
+        this.setState({[event.target.name] : event.target.value})
+    }
+
 
 
 
     render() {
+        
         
         const {posts} = this.state
 
@@ -47,21 +59,81 @@ export default class extends Component {
             <div>
 
                 <div>
-                this is feed component
                 
+                <center>
+                <SearchField
+                placeholder="Search..."
+                value={this.state.tags}
+                onChange={this.changeHandler}
+                searchText= ""
+                classNames="test-class"
+                />
 
-                Lists of post
+                </center>
                 <div>
+                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th scope="col">Question Id</th>
+                                        <th scope="col">Question</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Upvotes</th>
+                                        <th scope="col">Downvotes</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Tags</th>
+                                        </tr>
+                                    </thead>
+
+                                    </table>
+
+
+
+
+
                     {
+                            
                         posts.length ?
                         posts.map( posts => 
                              <div key = {posts.id}>
                                  <center> 
                                     
-                                    <div>
-                                    <div>{posts.title}              {posts.userId}</div>
+                                    <div>  
+                                    {/* <QuestionComponent/> */}
+                                    <table className = "table">
+                                    <thead>
+                                        <tr className = 'container-fluid'>
+                                         <th scope="col">{posts.questionid}</th>
+                                        
+                                        
+                                        
+                                        <Popover 
+                                            content={
+                                                <Pane
+                                                width={240}
+                                                height={240}
+                                                display="flex"
+                                                alignItems="center"
+                                                justifyContent="center"
+                                                flexDirection="column"
+                                                >
+                                              <Text>PopoverContent</Text>
+                                            </Pane>
+                                          }>
+                                        <Button scope="col">{posts.question}</Button>
+                                        </Popover>
+                                        
+                                        
+                                        
+                                        
+                                        <th scope="col">{posts.title}</th>
+                                        <th scope="col">{posts.upvotes}</th>
+                                        <th scope="col">{posts.downvotes}</th>
+                                        <th scope="col">{posts.date}</th>
+                                        <th scope="col">{posts.tags}</th>
+                                        </tr>
+                                    </thead>
+                                    </table>
                                     </div>
-
 
 
 
