@@ -23,6 +23,8 @@
     "react-scripts": "3.3.0",
     "react-search-box": "^2.0.2",
     "react-search-field": "^1.0.0",
+    "react-side-sheet": "^0.1.17",
+    "react-time-picker": "^3.9.0",
     "reactstrap": "^8.2.0",
     "tachyons": "^4.11.1"
   },
