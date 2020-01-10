@@ -74,7 +74,6 @@ export default class extends Component {
                 <table class="table">
                                     <thead>
                                         <tr>
-                                        <th scope="col">Question Id</th>
                                         <th scope="col">Question</th>
                                         <th scope="col">Title</th>
                                         <th scope="col">Upvotes</th>
@@ -102,7 +101,6 @@ export default class extends Component {
                                     <table className = "table">
                                     <thead>
                                         <tr className = 'container-fluid'>
-                                         <th scope="col">{posts.questionid}</th>
                                         
                                         
                                         
