@@ -107,59 +107,8 @@ getChartData(){
         return(
             
     <React.Fragment> 
-      <Navbar/>
-        {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Uploads</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#" >schemes<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Broadcast</a>
-        </li>
-    </ul>
-    <ul class="navbar-nav ml-auto">
-        <li class="dropdown">
-            <a class="dropdown-toggle" href="#" role="button">Manage<span class="caret"></span></a>
-        </li>
-       <ul class="dropdown-menu">
-           <li><a href="#">Save Data</a></li>
-           <li><a href="#">Fetch Data</a></li>
-
-       </ul>
-    </ul>
-    </div>
-  </nav>     */}
-        <Switch>
-                    
-                    <Route  path="/govtschemes" component={govtschemes}></Route>
-
-                </Switch>          
-     {/* <form onSubmit={this.handleSubmit}>
-         <br></br>
-        <label>
-          Message:
-          <input type="text" value={this.state.value} style={{border:"blue"}}  onChange={this.handleChange} />
-        </label>
-        <label>
-          State:
-          <input type="text" value={this.state.value} style={{border:"blue"}}  onChange={this.handleChange} />
-        </label>
-        <label>
-          District:
-          <input type="text" value={this.state.value} style={{border:"blue"}}  onChange={this.handleChange} />
-        </label>
-        <label>
-          Title:
-          <input type="text" value={this.state.value} style={{border:"blue"}}  onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form> */}
-
+   
+      
         
       
            <div className="row">

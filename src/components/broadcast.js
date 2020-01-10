@@ -1,45 +1,39 @@
-import React, {Component} from 'react'
+import React,{Component} from 'react'
 import axios from 'axios'
-import { Button } from 'react-bootstrap';
 import Navbar from './Navbar'
-
-
-class govtschemes extends Component{
-    constructor(props){
-        super(props);
+class broadcast extends Component{
+    constructor(){
+        super();
         this.state={
+
         }
-      
-    
     }
-
-
     render(){
-        return( 
-            
-    <React.Fragment>
-        
+        return(
+            <React.Fragment>
+                
                 <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     <label for="inputEmail4">Title</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email"></input>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Title"></input>
                     </div>
-                    <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password"></input>
-                    </div>
+                    
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress">Info</label>
+                    <label for="inputAddress">Message</label>
                     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></input>
                 </div>
-                <div class="form-group">
-                    <label for="inputAddress2">Detail Info</label>
-                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"></input>
-                </div>
+               
                 <div class="form-row">
                     <div class="form-group col-md-6">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                    </div>
+                    <div class="form-group col-md-4">
                     <label for="inputState">District</label>
                     <select id="inputState" class="form-control">
                         <option selected>Choose...</option>
@@ -47,7 +41,7 @@ class govtschemes extends Component{
                     </select>
                     </div>
                     <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
+                    <label for="inputState">Taluka</label>
                     <select id="inputState" class="form-control">
                         <option selected>Choose...</option>
                         <option>...</option>
@@ -70,7 +64,8 @@ class govtschemes extends Component{
                 </form>
 
         </React.Fragment>
+
         );
+    }
 }
-}
-export default govtschemes
+export default broadcast
