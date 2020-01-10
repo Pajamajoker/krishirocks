@@ -95,7 +95,7 @@ class MyFarm extends Component {
             <div> 
 
             <div className="mt">
-                <Link to={{pathname:"/account/addfarm",MyFarmprops:{farmNum:posts.length}}} className="btn bg-blue-ui white read">ADD NEW FARM</Link> 
+                <Link to={{pathname:"/account/addfarm/"+posts.length}} className="btn bg-blue-ui white read">ADD NEW FARM</Link> 
                  <br/><br/>
                  </div>  
                 

@@ -15,7 +15,7 @@ class AddFarm extends Component {
                 Pincode:'',
                 Area:'',
                 Location:'N/A',
-                FarmNum:props.location.MyFarmprops.farmNum+1
+                FarmNum:this.props.match.params.FarmNum
             }
     }
 
