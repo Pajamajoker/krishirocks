@@ -58,6 +58,8 @@ export default class Account extends Component {
         return (
             <div>
                 <Navbar/>
+                <div>
+
                 <Switch>
                     <Route exact path={`${this.props.match.path}`} component={Home}></Route>
                     <Route exact path={`${this.props.match.path}/home`} component={Home}></Route>
@@ -83,7 +85,10 @@ export default class Account extends Component {
 
 
                 </Switch>
+                </div>
+                <div>
                 <Footer/>
+                </div>
             </div>
         )
     }
