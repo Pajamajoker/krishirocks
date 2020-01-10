@@ -10,7 +10,6 @@ export default class Feed extends Component {
                 <Button appearance="primary">  <Link to="/account/postquestion">ADD NEW QUESTION</Link> </Button>  
                 </center>    
                  <FeedComponent/>
-               
             </div>
         )
     }

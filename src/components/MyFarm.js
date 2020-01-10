@@ -12,6 +12,7 @@ class MyFarm extends Component {
         this.state = {
              posts:[],
              error:"",
+             gotData:"0",
              aadharid:this.props.aadharid
         }
     }
@@ -28,11 +29,32 @@ class MyFarm extends Component {
             console.log(e)
             return undefined
         }
-    }
+    };
+
+     getFarms=()=>
+    {
+        console.log("made request with aadharid" + this.state.aadharid)
+         axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.state.aadharid}})
+        //axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
+        .then(response => {  
+        this.setState({posts:response.data,
+                        gotData:"1"}) 
+        }
+        ) 
+        .catch(
+            
+            error=>{ 
+                this.setState({error:"No Farms Found"})
+                console.log(error) }
+            )
+
+    };
 
     componentDidMount()
     {
-        console.log("here")
+        if(this.state.aadharid!==undefined)
+        this.getFarms();
+        console.log("mounted")
         let Currstate
         //try to load from local storage
         Currstate=this.loadLocalData()
@@ -42,43 +64,34 @@ class MyFarm extends Component {
             try{
                 const serializedState=JSON.stringify(this.state)
                 localStorage.setItem('MyFarmState',serializedState)
-                
+                console.log("saved this state")
             }
             catch(e)
             {
                 console.log(e)
             }
         }
-        else
-        this.setState(JSON.parse(Currstate))
-        
-
-
-        console.log(this.state.aadharid+"febshbfhjesbfkj")
-       // axios.get('https://jsonplaceholder.typicode.com/users',{params:{aadharid:this.state.aadharid}})
-        axios.get('http://192.168.43.233:8080/farmer/show/farm',{params:{aadharid:this.state.aadharid}})
-        .then(response => {  console.log( response.data  ) 
-        this.setState({posts:response.data}) 
+        else{
+            let latestState=JSON.parse(Currstate)
+            console.log(latestState)
+            console.log("this state was retrieved")
+            if(this.state.aadharid===undefined)
+            this.setState(latestState)
         }
-        ) 
-        .catch(
-            
-            error=>{ 
-                this.setState({error:"No Farms Found"})
-                console.log(error) }
-        )
-
-
     }
      
-
+    
 
 
     render() {
+        if(this.state.gotData==="0")
+        this.getFarms()
         const{posts}=this.state
-        console.log(JSON.stringify(this.state))
+        console.log(this.state)
+        
+        //console.log(JSON.stringify(this.state))
         return (
-
+           
             <div> 
 
             <div className="mt">
@@ -93,8 +106,8 @@ class MyFarm extends Component {
                                 {
                                      posts.length ?
                                             posts.map(post=>
-                                            <div className="col-md-4" >
-                                            <FarmTile/>
+                                            <div className="col-md-4" key={post.id}>
+                                            <FarmTile farmid={post.id}></FarmTile>
                                             </div>) 
                                     :null
                                 }
