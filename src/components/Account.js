@@ -6,6 +6,10 @@ import MyFarm from './MyFarm'
 import AddFarm from './AddFarm'
 import Feed from './Feed'
 import PostQuestion from './PostQuestion'
+import FarmDetails from './FarmDetails'
+import AddCrop from './AddCrop'
+import selectAddCrop from './selectAddCrop'
+import Footer from './Footer'
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -38,10 +42,16 @@ export default class Account extends Component {
         } else {
             //Prompt no data.
         }
+
+
+
+
+        //put this state in store here
+        //{}n
     }
 
     render(props) {
-
+        
         console.log("this is the aadharid"+this.state.aadharid)
         return (
             <div>
@@ -55,10 +65,18 @@ export default class Account extends Component {
                     <Route path={`${this.props.match.path}/addfarm`}
                     render={(props) => (<AddFarm {...props} aadharid={this.state.aadharid} />)}
                     ></Route> 
+                    <Route path={`${this.props.match.path}/addcrop/:farmid/:cropid`}
+                    render={(props) => (<AddCrop {...props} aadharid={this.state.aadharid} />)}
+                    ></Route>
                     <Route path={`${this.props.match.path}/postquestion`}
                     render={(props) => (<PostQuestion {...props} aadharid={this.state.aadharid} />)}
                     ></Route>
+                    <Route path={`${this.props.match.path}/farmdetails/:farmid`}
+                    render={(props) => (<FarmDetails {...props} aadharid={this.state.aadharid} />)}
+                    ></Route>
+                    <Route exact path={`${this.props.match.path}/selectcrop/:farmid`} component={selectAddCrop}></Route>
                 </Switch>
+                <Footer/>
             </div>
         )
     }

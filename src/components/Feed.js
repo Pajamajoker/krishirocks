@@ -6,7 +6,6 @@ export default class Feed extends Component {
         return (
             <div>
                  <FeedComponent/>
-               
             </div>
         )
     }

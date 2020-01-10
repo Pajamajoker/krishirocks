@@ -6,12 +6,10 @@ export default class extends Component {
             <div>
 
                 <div>
-                this is feed component<br> </br>
+                this is feed component
                 <div className="mt"> <Link to="/account/postquestion" className="btn bg-blue-ui white read">ADD NEW QUESTION</Link> <br/><br/></div>  
                 </div>
-            
-            
-            
+
             </div>
         )
     }

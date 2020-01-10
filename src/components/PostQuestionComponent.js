@@ -1,22 +1,8 @@
-import React, { Component ,useState} from 'react'
+import React, { Component} from 'react'
 import axios from 'axios'
-import {Button,TextInputField, Pane,SelectMenu,Avatar} from 'evergreen-ui'
+import {Button,TextInputField,Avatar} from 'evergreen-ui'
 import Form from 'react-bootstrap/Form';
-import Alert from 'react-bootstrap/Alert';
-//import Container from 'react-bootstrap/Container'
-import Carousel from 'react-bootstrap/Carousel'
 import {Container} from 'reactstrap'
-import './resources/vendor/bootstrap/css/bootstrap.min.css'
-import './resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css'
-import './resources/fonts/Linearicons-Free-v1.0.0/icon-font.min.css'
-import './resources/vendor/animate/animate.css'
-import './resources/vendor/css-hamburgers/hamburgers.min.css'
-import './resources/vendor/animsition/css/animsition.min.css'
-import './resources/vendor/select2/select2.min.css'
-import './resources/vendor/daterangepicker/daterangepicker.css'
-import './resources/css/util.css'
-import './resources/css/main.css'
-
 
 
 
@@ -28,7 +14,7 @@ export class FeedComponent extends Component {
         super(props)
 
         this.state = {
-            title : "",
+
             question : "",
             aadharid : "",
             tags : []
@@ -60,7 +46,7 @@ export class FeedComponent extends Component {
 
 
     render() {
-        const{title,question,aadharid} = this.state
+        const{question} = this.state
         return (
             
             <div>

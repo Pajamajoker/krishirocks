@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-
+import BlogpostComponent from './BlogpostComponent'
+import NavTiles from './NavTiles'
 export default class Home extends Component {
     render(props) {
         return (
             <div>
                <div>
-                    this is home
+                   <NavTiles/>
+                    <BlogpostComponent/>
                 </div>
             </div>
         )
