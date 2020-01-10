@@ -95,10 +95,8 @@ class MyFarm extends Component {
             <div> 
 
             <div className="mt">
-                <Link to={{pathname:"/account/addfarm",MyFarmprops:{farmNum:posts.length}}} className="btn bg-blue-ui white read">ADD NEW FARM</Link> 
-               {/* Aadhar ID */}
-               
-         <br/><br/>
+                <Link to={{pathname:"/account/addfarm/"+posts.length}} className="btn bg-blue-ui white read">ADD NEW FARM</Link> 
+                 <br/><br/>
                  </div>  
                 
                     <div className="carousel-inner">

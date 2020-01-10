@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
 import axios from 'axios'
-import QuestionComponent from './resources/QuestionComponent'
-import { Popover ,Pane,Text ,SearchInput} from 'evergreen-ui'
+import { Popover ,Pane,Text} from 'evergreen-ui'
 import { Button } from 'reactstrap'
-import ReactSearchBox from 'react-search-box'
 import SearchField from "react-search-field";
 
 
@@ -32,8 +29,8 @@ export default class extends Component {
     }
     
      componentDidMount () {
-         //axios.get('https://jsonplaceholder.typicode.com/posts',{params:{aadharid:"123456789012"}})
-         axios.get('http://192.168.43.233:8080/forum/show/question',{params:{aadharid:"123456789012",type:"asd"}})
+         axios.get('https://jsonplaceholder.typicode.com/posts',{params:{aadharid:"123456789012"}})
+         //axios.get('http://192.168.43.233:8080/forum/show/question',{params:{aadharid:"123456789012",type:"asd"}})
          .then(Response =>{
              console.log(Response)
              this.setState ({posts:Response.data})

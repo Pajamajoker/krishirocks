@@ -11,6 +11,8 @@ import AddCrop from './AddCrop'
 import selectAddCrop from './selectAddCrop'
 import Footer from './Footer'
 import Finance from './Finance'
+import Schemes from './Schemes'
+import SchemeInfo from './SchemeInfo'
 export default class Account extends Component {
     constructor(props) {
         super(props)
@@ -64,7 +66,7 @@ export default class Account extends Component {
                     render={(props) => (<Feed {...props} aadharid={this.state.aadharid} />)} ></Route>
                     <Route path={`${this.props.match.path}/myfarm`} 
                     render={(props) => (<MyFarm {...props} aadharid={this.state.aadharid} />)} ></Route>
-                    <Route path={`${this.props.match.path}/addfarm`}
+                    <Route path={`${this.props.match.path}/addfarm/:farmNum`}
                     render={(props) => (<AddFarm {...props} aadharid={this.state.aadharid} />)}
                     ></Route> 
                      <Route path={`${this.props.match.path}/finance`}
@@ -80,6 +82,10 @@ export default class Account extends Component {
                     render={(props) => (<FarmDetails {...props} aadharid={this.state.aadharid} />)}
                     ></Route>
                     <Route exact path={`${this.props.match.path}/selectcrop/:farmid`} component={selectAddCrop}></Route>
+                    <Route exact path={`${this.props.match.path}/schemes`} component={Schemes}></Route>
+                    <Route exact path={`${this.props.match.path}/scheme-info/:tagname`} component={SchemeInfo}></Route>
+
+
                 </Switch>
                 <Footer/>
             </div>
