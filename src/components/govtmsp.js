@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 // import Chart from './Chart'
 import axios from 'axios'
 
-class vendorshowmsp extends Component{
+class govtmsp extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -69,4 +69,4 @@ render(){
     )
 }
 }
-export default vendorshowmsp
+export default govtmsp
