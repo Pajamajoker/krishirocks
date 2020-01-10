@@ -10,6 +10,7 @@ import FarmDetails from './FarmDetails'
 import AddCrop from './AddCrop'
 import selectAddCrop from './selectAddCrop'
 import Footer from './Footer'
+import Finance from './Finance'
 import Schemes from './Schemes'
 import SchemeInfo from './SchemeInfo'
 export default class Account extends Component {
@@ -69,6 +70,9 @@ export default class Account extends Component {
                     render={(props) => (<MyFarm {...props} aadharid={this.state.aadharid} />)} ></Route>
                     <Route path={`${this.props.match.path}/addfarm/:farmNum`}
                     render={(props) => (<AddFarm {...props} aadharid={this.state.aadharid} />)}
+                    ></Route> 
+                     <Route path={`${this.props.match.path}/finance`}
+                    render={(props) => (<Finance {...props} aadharid={this.state.aadharid} />)}
                     ></Route> 
                     <Route path={`${this.props.match.path}/addcrop/:farmid/:cropid`}
                     render={(props) => (<AddCrop {...props} aadharid={this.state.aadharid} />)}
