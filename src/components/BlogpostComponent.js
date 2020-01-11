@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './resources/vendor/bootstrap/css/bootstrap.min.css'
+import Schemes from './Schemes'
 export default class BlogpostComponent extends Component {
     render() {
         return (
@@ -11,8 +12,8 @@ export default class BlogpostComponent extends Component {
                     
                     <div className="col-md-8">
 
-                        <h1 className="my-4">Page Heading
-                        <small>Secondary Text</small>
+                        <h1 className="my-4">News Feed<br/>
+                       <small> <h3>Check out latest farming content</h3></small> 
                         </h1>
 
                         
@@ -87,32 +88,32 @@ export default class BlogpostComponent extends Component {
 
                         
                         <div className="card my-4">
-                        <h5 className="card-header">Categories</h5>
+                        <h5 className="card-header">Content Categories</h5>
                         <div className="card-body">
                             <div className="row">
                             <div className="col-lg-6">
                                 <ul className="list-unstyled mb-0">
                                 <li>
-                                    <a href="/account">Web Design</a>
+                                    <a href="/account">Pestisides</a>
                                 </li>
                                 <li>
-                                    <a href="/account">HTML</a>
+                                    <a href="/account">Fertilizers</a>
                                 </li>
                                 <li>
-                                    <a href="/account">Freebies</a>
+                                    <a href="/account">Crop Diseasess</a>
                                 </li>
                                 </ul>
                             </div>
                             <div className="col-lg-6">
                                 <ul className="list-unstyled mb-0">
                                 <li>
-                                    <a href="/account">JavaScript</a>
+                                    <a href="/account">Weather</a>
                                 </li>
                                 <li>
-                                    <a href="/account">CSS</a>
+                                    <a href="/account">Schemes</a>
                                 </li>
                                 <li>
-                                    <a href="/account">Tutorials</a>
+                                    <a href="/account">Equipment</a>
                                 </li>
                                 </ul>
                             </div>
@@ -121,12 +122,7 @@ export default class BlogpostComponent extends Component {
                         </div>
 
                         
-                        <div className="card my-4">
-                        <h5 className="card-header">Side Widget</h5>
-                        <div className="card-body">
-                            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-                        </div>
-                        </div>
+                       <Schemes/>
 
                     </div>
 

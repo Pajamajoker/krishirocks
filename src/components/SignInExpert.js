@@ -13,12 +13,12 @@ import './resources/css/main.css'
 import {Link,Redirect} from 'react-router-dom'
 
 
-export class SignIn extends Component {
+export class SignInExpert extends Component {
     constructor(props) {
         super(props)
     
             this.state = {
-                aadharid:'',
+                expertid:'',
                 password:"",
                 auth:0
             }
@@ -43,23 +43,23 @@ export class SignIn extends Component {
         if(this.state.auth===1)
         {
             return <Redirect to={{
-                pathname: '/account',
-                state: { aadharid: this.state.aadharid }
+                pathname: '/accountexpert',
+                state: { expertid: this.state.expertid }
             }}/>
         }
-        const {aadharid,password}=this.state
+        const {expertid,password}=this.state
         return (
             <div><div className="limiter">
             <div className="container-login100">
                 <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
                     <form className="login100-form validate-form" onSubmit={this.submitHandler}>
                         <span className="login100-form-title p-b-33">
-                            Farmer SignIn
+                            Expert SignIn
                         </span>
 
 
                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
-                            <input className="input100" type="text" name="aadharid" value={aadharid} onChange={this.changeHandler} placeholder="AdhaarID"></input>
+                            <input className="input100" type="text" name="expertid" value={expertid} onChange={this.changeHandler} placeholder="AdhaarID"></input>
                             <span className="focus-input100-1"></span>
                             <span className="focus-input100-2"></span>
                         </div>
@@ -77,9 +77,9 @@ export class SignIn extends Component {
                         </div>
 
                         <div className="container-login100-form-btn m-t-20">
-                            <Link to='/signup'> New Here? Let's Sign Up </Link>
-                            &emsp;&emsp;&emsp;&emsp;
-                            <Link to='/signinexpert'> Sign In as Expert Instead</Link>
+                            <Link to='/signupexpert'> New Here? Let's Sign Up </Link>
+                            &emsp;&emsp;&emsp;
+                            <Link to='/'>Sign Up as Farmer Instead</Link>   
                         </div>
 
                         <div className="text-center">
@@ -88,23 +88,8 @@ export class SignIn extends Component {
                 </div>
             </div>
         </div></div>
-            // <div>
-            //     <form onSubmit={this.submitHandler}>
-            //         <div>
-            //         name: <input type="text" name="fullname" value={fullname} onChange={this.changeHandler}/>
-            //         </div>
-            //         <div>
-            //          A-ID   <input type="text" name="aadharid" value={aadharid} onChange={this.changeHandler}/>
-            //         </div>
-            //         <div>    
-            //          add   <input type="text" name="address" value={address} onChange={this.changeHandler}/>
-            //         </div>
-            //         <button type="submit">submit</button>
-            //     </form>
-
-            // </div>
         )
     }
 }
 
-export default SignIn
+export default SignInExpert

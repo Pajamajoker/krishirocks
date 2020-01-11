@@ -98,7 +98,8 @@ export default class FarmDetails extends Component {
                 <div> 
 
                 <div className="mt">
-                    <Link to={newTo} className="btn bg-blue-ui white read">ADD NEW CROP</Link> 
+                    <Link to={newTo} className="btn bg-blue-ui white read">ADD NEW CROP</Link> <br/><br/>
+                    <Link to={{pathname:"/account/finance",MyFarmprops:{farmNum:posts.length}}} className="btn bg-blue-ui white read">MY FINANCE PAGE</Link> 
                     <br/><br/>
                     </div>  
                     

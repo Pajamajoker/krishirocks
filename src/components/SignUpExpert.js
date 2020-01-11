@@ -13,14 +13,15 @@ import './resources/css/main.css'
 import {Link,Redirect} from 'react-router-dom'
 
 
-export class SignIn extends Component {
+export class SignupForm extends Component {
     constructor(props) {
         super(props)
     
             this.state = {
+                fullname:'',
                 aadharid:'',
-                password:"",
-                auth:0
+                address:'',
+                reg:0
             }
     }
     
@@ -28,35 +29,36 @@ export class SignIn extends Component {
         e.preventDefault() ;
         console.log(this.state)
         axios.post('https://jsonplaceholder.typicode.com/posts',this.state)
-        .then(response => { 
-        console.log(response.data)
-        if(response.data.id===101)
-        {
-            this.setState({auth:1})
-        }
-     })
+        .then(response => {
+             console.log(response)
+            if(response.data.id===101)
+            {
+                this.setState({reg:1})
+            }
+            })
         .catch(error => { console.log(error)})
     }
     changeHandler = (event) =>{   this.setState({[event.target.name]:event.target.value})    }
     render() {
-
-        if(this.state.auth===1)
+        const {fullname,aadharid,address}=this.state
+        if(this.state.reg===1)
         {
-            return <Redirect to={{
-                pathname: '/account',
-                state: { aadharid: this.state.aadharid }
-            }}/>
+            return(<Redirect to="/"></Redirect>)
         }
-        const {aadharid,password}=this.state
         return (
             <div><div className="limiter">
             <div className="container-login100">
                 <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
                     <form className="login100-form validate-form" onSubmit={this.submitHandler}>
                         <span className="login100-form-title p-b-33">
-                            Farmer SignIn
+                            Expert SignUp
                         </span>
 
+                       <div className="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                            <input className="input100" type="text" name="fullname" value={fullname} onChange={this.changeHandler} placeholder="Username"></input>
+                            <span className="focus-input100-1"></span>
+                            <span className="focus-input100-2"></span>
+                       </div>
 
                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
                             <input className="input100" type="text" name="aadharid" value={aadharid} onChange={this.changeHandler} placeholder="AdhaarID"></input>
@@ -64,22 +66,32 @@ export class SignIn extends Component {
                             <span className="focus-input100-2"></span>
                         </div>
 
+                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                            <input className="input100" type="text" name="address" value={address} onChange={this.changeHandler} placeholder="Location"></input>
+                            <span className="focus-input100-1"></span>
+                            <span className="focus-input100-2"></span>
+                        </div>
+
                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
-                            <input className="input100" type="password" name="password" value={password} onChange={this.changeHandler} placeholder="Password"></input>
+                            <input className="input100" type="password" name="password" placeholder="Password"></input>
+                            <span className="focus-input100-1"></span>
+                            <span className="focus-input100-2"></span>
+                        </div>
+
+                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                            <input className="input100" type="password" name="password" placeholder="Confirm Password"></input>
                             <span className="focus-input100-1"></span>
                             <span className="focus-input100-2"></span>
                         </div>
 
                         <div className="container-login100-form-btn m-t-20">
                             <button className="login100-form-btn">
-                                Sign In
+                                Sign Up
                             </button>
                         </div>
 
                         <div className="container-login100-form-btn m-t-20">
-                            <Link to='/signup'> New Here? Let's Sign Up </Link>
-                            &emsp;&emsp;&emsp;&emsp;
-                            <Link to='/signinexpert'> Sign In as Expert Instead</Link>
+                               <Link to='/signinexpert'>Sign In Instead</Link> 
                         </div>
 
                         <div className="text-center">
@@ -107,4 +119,4 @@ export class SignIn extends Component {
     }
 }
 
-export default SignIn
+export default SignupForm
