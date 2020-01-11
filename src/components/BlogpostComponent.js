@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './resources/vendor/bootstrap/css/bootstrap.min.css'
+import Schemes from './Schemes'
 export default class BlogpostComponent extends Component {
     render() {
         return (
@@ -87,7 +88,7 @@ export default class BlogpostComponent extends Component {
 
                         
                         <div className="card my-4">
-                        <h5 className="card-header">Categories</h5>
+                        <h5 className="card-header">Content Categories</h5>
                         <div className="card-body">
                             <div className="row">
                             <div className="col-lg-6">
@@ -121,12 +122,7 @@ export default class BlogpostComponent extends Component {
                         </div>
 
                         
-                        <div className="card my-4">
-                        <h5 className="card-header">Government Schemes</h5>
-                        <div className="card-body">
-                            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-                        </div>
-                        </div>
+                       <Schemes/>
 
                     </div>
 

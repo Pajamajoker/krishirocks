@@ -10,9 +10,9 @@ export default class Navbar extends Component {
                     <Link to="/account/feed">QnA Forum</Link>
                     <Link to="/account/myfarm">My Farm</Link>
                      <Link to="/account/finance">My Finance</Link> 
-                     <Link to="/"><button style={{fontSize:"17px",color:"#ffffff",align:"right"}}><i class="fa fa-sign-out"></i></button></Link>
-                    <Link to="/">My Finance</Link>
                     <Link to="/account/schemes">Govt Schemes</Link>
+                    <Link to="/"><button style={{fontSize:"17px",color:"#ffffff",align:"right"}}><i class="fa fa-sign-out"></i></button></Link>
+
                 </div>
             </div>
         )

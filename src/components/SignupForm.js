@@ -21,6 +21,10 @@ export class SignupForm extends Component {
                 fullname:'',
                 aadharid:'',
                 address:'',
+                zipcode:'',
+                state:'',
+                district:'',
+                taluka:'',
                 reg:0
             }
     }
@@ -40,7 +44,7 @@ export class SignupForm extends Component {
     }
     changeHandler = (event) =>{   this.setState({[event.target.name]:event.target.value})    }
     render() {
-        const {fullname,aadharid,address}=this.state
+        const {fullname,aadharid,address,zipcode,state,district,taluka}=this.state
         if(this.state.reg===1)
         {
             return(<Redirect to="/"></Redirect>)
@@ -68,6 +72,30 @@ export class SignupForm extends Component {
 
                         <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
                             <input className="input100" type="text" name="address" value={address} onChange={this.changeHandler} placeholder="Location"></input>
+                            <span className="focus-input100-1"></span>
+                            <span className="focus-input100-2"></span>
+                        </div>
+
+                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                            <input className="input100" type="text" name="state" value={state} onChange={this.changeHandler} placeholder="State"></input>
+                            <span className="focus-input100-1"></span>
+                            <span className="focus-input100-2"></span>
+                        </div>
+
+                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                            <input className="input100" type="text" name="district" value={district} onChange={this.changeHandler} placeholder="District"></input>
+                            <span className="focus-input100-1"></span>
+                            <span className="focus-input100-2"></span>
+                        </div>
+
+                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                            <input className="input100" type="text" name="taluka" value={taluka} onChange={this.changeHandler} placeholder="Taluka"></input>
+                            <span className="focus-input100-1"></span>
+                            <span className="focus-input100-2"></span>
+                        </div>
+
+                        <div className="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                            <input className="input100" type="text" name="zipcode" value={zipcode} onChange={this.changeHandler} placeholder="ZipCode"></input>
                             <span className="focus-input100-1"></span>
                             <span className="focus-input100-2"></span>
                         </div>
