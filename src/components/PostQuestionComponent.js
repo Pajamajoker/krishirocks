@@ -3,6 +3,10 @@ import axios from 'axios'
 import {Button,TextInputField,Avatar} from 'evergreen-ui'
 import Form from 'react-bootstrap/Form';
 import {Container} from 'reactstrap'
+import { Box } from '@material-ui/core';
+import '../App.css'
+import './postQ.css'
+
 
 
 
@@ -51,9 +55,10 @@ export class FeedComponent extends Component {
             
             <div>
                 <Avatar name="Jeroen Ransijn" size={40} />
-
-
-
+                
+                <center>
+             <h1>POST YOUR QUESTION HERE</h1> 
+                </center>  
 {/* 
 
              <Carousel>
@@ -96,10 +101,11 @@ export class FeedComponent extends Component {
                 </Carousel>  */}
 
 
- 
-
-               <Container><center> 
-               <Form.Group onSubmit = {this.submitHandler} >
+            
+                <Box component = "span" m={1} >
+               <Container><center>  
+               <Form.Group onSubmit = {this.submitHandler} className='greythis' >
+                   
                     <center>
 
                         <div className = 'container-fluid'>
@@ -120,6 +126,7 @@ export class FeedComponent extends Component {
                         <div>
                             <center>
                                 <TextInputField
+                                    variant="filled"
                                     required
                                     label = "aadhar Id"
                                     type = "text"
@@ -132,10 +139,10 @@ export class FeedComponent extends Component {
                             </center>
                         </div>  
 
-
                        <div>
                             <center>
                                 <TextInputField
+                                    style={{ margin: 8 }}
                                     required
                                     label = "Questions"
                                     type = "text"
@@ -143,11 +150,10 @@ export class FeedComponent extends Component {
                                     name = "question"
                                     value = {question}
                                     onChange = {this.changeHandler}
-                                    width = "50%"
+                                    fullwidth
                                 />
                             </center>
                         </div> 
-
                     </center>
                     <center>
                         <Button marginRight={16}
@@ -160,8 +166,10 @@ export class FeedComponent extends Component {
                     </center>
             </Form.Group>
             </center>
-            </Container>
             
+            </Container>
+            </Box>
+                </div>
 
 
 
@@ -172,7 +180,7 @@ export class FeedComponent extends Component {
 
 
 
-            </div>
+            
         )
     }
 }
