@@ -1,11 +1,7 @@
 import React, {Component} from 'react'
 import Chart from './Chart'
 import axios from 'axios'
-import {Link,Redirect} from 'react-router-dom'
-import {Switch,Route} from 'react-router-dom'
-import Navbar from './Navbar'
 
-import govtschemes from './govtschemes';
 
 
 class government extends Component{
@@ -44,7 +40,7 @@ class government extends Component{
     }
 
     getChartData(){
-        axios.get('http://localhost:8080/govt/show/crop/produce',{params:{aadharid:'123456789012'}})
+        axios.get('http://192.168.43.233:8080/govt/show/crop/produce',{params:{aadharid:'123456789012'}})
         .then(response => {
             // this.data=response.data;
             console.log(JSON.stringify(response.data[0].name))
@@ -82,7 +78,7 @@ class government extends Component{
 
 
     getPrices(){
-        axios.get('http://localhost:8080/govt/show/crop/prices',{params:{aadharid:'123456789012'}})
+        axios.get('http://192.168.43.233:8080/govt/show/crop/prices',{params:{aadharid:'123456789012'}})
         .then(response => {
             // this.data=response.data;
             console.log(JSON.stringify(response.data[0].name))
@@ -122,7 +118,7 @@ class government extends Component{
     
 
     getProduceData(){
-    axios.get('http://localhost:8080/govt/show/cropdata',{params:{aadharid:'123456789012'}})
+    axios.get('http://192.168.43.233:8080/govt/show/cropdata',{params:{aadharid:'123456789012'}})
     .then(response => {
         // this.data=response.data;
         console.log(JSON.stringify(response.data[0].name))
@@ -192,7 +188,9 @@ class government extends Component{
     <React.Fragment> 
    
       
-        
+            <h1>
+                All Statistics :
+            </h1>
       
            <div className="row">
         <div className="col-md-6">
