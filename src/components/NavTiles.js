@@ -1,10 +1,114 @@
 import React, { Component } from 'react'
 import './resources/vendor/bootstrap/css/bootstrap.min.css'
+import  {Carousel,Image} from 'react-bootstrap'
+
+
+
+
 import './resources/css/homebackgrd.css'
 export default class NavTiles extends Component {
     render() {
         return (
             <div>
+
+
+
+
+
+
+{/* 
+
+                <header>                 
+                <Carousel className = "container" View opacity = "0.5" width= "100%" >
+                    <Carousel.Item width="50%" height="200px">
+                        <Image
+                        className="d-block w-100"
+                        src="https://thumbs.dreamstime.com/b/indian-farmer-holding-crop-plant-his-wheat-field-indian-farmer-holding-crop-plant-his-wheat-field-123557695.jpg"
+                        alt="First slide"
+                        />
+                        <Carousel.Caption>
+                        <h3>First slide label</h3>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Image
+                        className="d-block w-100"
+                        src="https://media.gettyimages.com/photos/workers-in-field-india-picture-id134178057?s=612x612"
+                        alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                        <h3>Second slide label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Image
+                        className="d-block w-100"
+                        src="https://images.unsplash.com/photo-1497448134719-754ac7fd09eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                        alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                        <h3>Third slide label</h3>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+                </header>
+
+
+
+ */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div className="container">
+                <div className="jumbotron my-4">
+                <h1 className="display-3" style={{backgroundImage:"https://www.gettyimages.in/detail/photo/cheerful-family-portrait-royalty-free-image/516326480"}}>Krishi Rocks!</h1>
+                
+                <p className="lead">Find Help in Agriculture | Get Crop Recommendations</p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
 
 <div className="container">
                 <header className="jumbotron my-4 homebackgrd" >
@@ -14,7 +118,7 @@ export default class NavTiles extends Component {
                 </header>
 
                 
-                <div className="row text-center">
+                <div className="row text-center container">
 
                 <div className="col-lg-3 col-md-6 mb-4">
                     <div className="card h-100">
@@ -168,3 +272,25 @@ export default class NavTiles extends Component {
         )
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// https://thumbs.dreamstime.com/b/indian-farmer-holding-crop-plant-his-wheat-field-indian-farmer-holding-crop-plant-his-wheat-field-123557695.jpg
+// https://media.gettyimages.com/photos/workers-in-field-india-picture-id134178057?s=612x612
+// https://images.unsplash.com/photo-1497448134719-754ac7fd09eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60
